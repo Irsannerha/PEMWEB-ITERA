@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<style>
+    #container {
+      width: 650px;
+      height: 650px;
+      position: relative;
+      background: #bbb
+    }
+    #animasi {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background-color: #f50;
+    }
+    button {
+    font-family: sans-serif;
+    font-size: 15px;
+    background: #f50;
+    color: white;
+    border: white 3px solid;
+    border-radius: 5px;
+    padding: 12px 20px;
+    margin-top: 10px;
+    }
+    button:hover {
+      opacity:0.9;
+    }
+    </style>
+<body>
+
+<div id ="container">
+
+ <div id="animasi">*</div>
+
+ <h1 id="HELLO"></h1>
+
+ <div class="isi"></div>
+</div>
+
+<p><button onclick="myMove()">KLIK!</button></p>
+<script>
+
+  const HELLO = document.getElementById('HELLO')
+  HELLO.innerHTML = '<br>Hello<br>Friends!<br>'
+
+  const isi = document.getElementsByClassName('isi')[0]
+  isi.innerHTML = '<p> INFORMATIKA-20'
+
+
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animasi");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 600) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+</script>
+
+  <script>
+    const btn = document.querySelector('button');
+ 
+    function random(number) {
+      return Math.floor(Math.random() * (number+1));
+    }
+ 
+    btn.addEventListener('click', () => {
+      const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+      document.body.style.backgroundColor = rndCol;
+    });
+  </script>
+</body>
+</html>
