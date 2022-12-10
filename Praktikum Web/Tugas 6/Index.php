@@ -12,7 +12,6 @@ function BilRomawi($dataAngka) {
 	  $dataAngka = $dataAngka % $value;
 	 
 	 }
-	 
 	 return $root;
 }
 
