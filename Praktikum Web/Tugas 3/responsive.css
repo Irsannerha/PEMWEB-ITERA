@@ -1,0 +1,35 @@
+
+@media screen and (max-width: 960px) {
+ 
+ 
+ 
+}
+ 
+@media screen and (max-width: 460px) {
+    .tentang{
+        flex-wrap: wrap;
+        max-width: 500px;
+    }
+    .video iframe{
+        width:400px ;
+    }
+    table{
+        font-size: 10px;
+        width: 350px;
+        text-align: center;
+    }
+    .nav li a{
+        font-size: 12px;
+    }
+    .pox{
+        width: 350px;
+    }
+    .form{
+        width: 350px;
+    }
+
+    .container{
+        justify-content: flex-end;
+    }
+}
+
